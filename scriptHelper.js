@@ -53,37 +53,38 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
         list.style.visibility = 'visible';
-    }
 
-    let launchOutput = document.getElementById('launchStatus');
+        let launchOutput = document.getElementById('launchStatus');
 
-    //check fuel level, if below 10,000 change list to visable and h2 message to red
-
-   if (fuelLevel < 10000) {
-
-    launchOutput.innerHTML = 'Shuttle not ready for launch';
-    launchOutput.style.color = 'red';
-    fuelStatus.innerHTML = `Fuel level too low for launch`;
-
-   }
-
-    //check cargo, if above 10,000 change list to visable and h2 message to red
-   
-  if (cargoLevel > 10000) {
-
-    launchOutput.innerHTML = 'Shuttle not ready for launch';
-    launchOutput.style.color = 'red';
-    cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
+        //check fuel level, if below 10,000 change list to visable and h2 message to red
     
-   }
-
-    //if all good change h2 to green and status
-   
-    if (fuelLevel >= 10000 && cargoLevel <= 10000) {
-        launchOutput.style.color = 'green';
-        launchOutput.innerHTML = 'Shuttle is ready for launch'; 
-        fuelStatus.innerHTML = `Fuel level high enough for launch`;
-        cargoStatus.innerHTML = `Cargo mass low enough for launch`;
+       if (fuelLevel < 10000) {
+    
+        launchOutput.innerHTML = 'Shuttle not ready for launch';
+        launchOutput.style.color = 'red';
+        fuelStatus.innerHTML = `Fuel level too low for launch`;
+    
+       }
+    
+        //check cargo, if above 10,000 change list to visable and h2 message to red
+       
+      if (cargoLevel > 10000) {
+    
+        launchOutput.innerHTML = 'Shuttle not ready for launch';
+        launchOutput.style.color = 'red';
+        cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
+        
+       }
+    
+        //if all good change h2 to green and status
+       
+        if (fuelLevel >= 10000 && cargoLevel <= 10000) {
+            launchOutput.style.color = 'green';
+            launchOutput.innerHTML = 'Shuttle is ready for launch'; 
+            fuelStatus.innerHTML = `Fuel level high enough for launch`;
+            cargoStatus.innerHTML = `Cargo mass low enough for launch`;
+    
+        }
 
     }
 
